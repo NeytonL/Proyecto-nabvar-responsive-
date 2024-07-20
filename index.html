@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. Menú De Navegación Responsive - Practica CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <!-- Start Mobile -->
+    <div class="header__mobile-container">
+      <input type="checkbox" id="open-menu-mobile" class="mobile__checkbox">
+      <label for="open-menu-mobile"  class="mobile__open-nav">=</label>
+
+      <div class="mobile__logo-container">
+        <img src="Logo_Dark.png" alt="" class="mobile__logo">
+      </div>
+
+
+      <nav class="header__nav-mobile">
+        <ul>
+          <li><a href="#" class="nav__link">About</a></li>
+          <li><a href="#" class="nav__link">Services</a></li>
+          <li><a href="#" class="nav__link">Contact</a></li>
+          <li><a href="#" class="nav__link">Search</a></li>
+          <li><a href="#" class="nav__link">Sign Up</a></li>
+          <li><a href="#" class="nav__link">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- End Mobile -->
+
+
+    <!-- Start Desktop -->
+    <div class="header__desktop-container">
+      <div class="desktop__logo-container">
+        <img src="Logo_Dark.png" alt="" class="desktop__logo">
+      </div>
+
+      <input type="checkbox" id="open-menu-desktop" class="desktop__checkbox">
+      <label for="open-menu-desktop"  class="desktop__open-nav">=</label>
+      
+      <div class="header__container-primary">
+
+        <nav class="header__nav-desktop">
+          <ul>
+            <li><a href="#" class="nav__link">About</a></li>
+            <li><a href="#" class="nav__link">Services</a></li>
+            <li><a href="#" class="nav__link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header__container-secondary">
+        <nav class="header__nav-desktop">
+          <ul class="header__colum">
+          <li><a href="#" class="nav__link">Search</a></li>
+          <li><a href="#" class="nav__link">Sign Up</a></li>
+          <li class="header__button"><a href="#" class="nav__link ">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+
+
+    </div>
+    <!-- End Desktop -->
+  </header>
+
+  Lo unico que cambia el que en desktop hay un padding de 20px en una sola direccion
+</body>
+</html>

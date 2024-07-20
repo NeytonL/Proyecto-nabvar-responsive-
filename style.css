@@ -1,0 +1,217 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: sans-serif;
+}
+
+
+/* ------ HEADER MOBILE SECTION ------ */
+.header{
+  background-color: #000;
+  color: #fff;
+  container-type: inline-size;
+  container-name: header;
+  position: sticky;
+  top: 0;
+}
+
+.header__mobile-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /*Contenedor relativo para sus valores abosolutos a ella*/
+  z-index: 10;
+}
+
+.mobile__checkbox{
+  display: none;
+}
+
+.mobile__open-nav{
+  font-size: 3rem;
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+}
+
+.header__nav-mobile{
+  background-color: #000;
+  position: absolute;
+  top: 61px;
+  width: 100%; /*Ocupa todo tu ancho disponible pero crece hasta*/
+  max-width: 500px;
+  z-index: -1;
+  display: none;
+}
+
+.header__nav-mobile ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav__link{
+  display: block;
+  color: #fff;
+  padding: 20px 0;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+li{
+  list-style: none;
+}
+
+li:hover{
+  text-decoration: underline;
+  opacity: 0.74;
+}
+
+.mobile__logo-container{
+  width: 100%;
+}
+
+.mobile__logo{
+  width: 128px;
+  margin: 10px 0 0 10px ;
+}
+
+.mobile__checkbox:checked ~ .header__nav-mobile{
+  display: flex;
+  justify-content: center;
+  
+}
+
+/* ------ HEADER MOBILE SECTION QUERIES ------ */
+
+@container header (min-width: 501px){
+  /* Desapare todo lo de mobile */
+  .mobile__open-nav, .mobile__logo {
+    display: none;
+  }
+  /* Por nivel de especificidad */
+  .header .header__mobile-container .header__nav-mobile{
+    display: none;
+  }
+
+}
+
+
+
+/* ------ HEADER MOBILE SECTION END ------ */
+
+
+
+/* ------ HEADER DESKTOP SECTION ------ */
+.header__desktop-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav-desktop ul{
+  display: flex;
+  flex-direction: row;
+}
+
+/* Para que haya mayor especificidad */
+.header__nav-desktop .header__colum {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__nav-desktop a{
+  color: #fff;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+
+.desktop__logo{
+  width: 128px;
+  margin: 10px;
+}
+
+.desktop__checkbox{
+  display: none;
+}
+
+.desktop__open-nav{
+  font-size: 3rem;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+}
+
+.header__container-secondary{
+  background-color: #000;
+  position: absolute;
+  right: 0;
+  top: 70px;
+  height: 100vh;
+  width: 25vw;
+  text-align: center;
+  display: none;
+}
+
+.desktop__checkbox:checked ~ .header__container-secondary {
+  display: block;
+}
+
+
+
+/* ------ HEADER DESKTOP SECTION QUERIES ------ */
+
+/* Cuando alcance el maximo, entonces que aparezca las opciones de mobile */
+@container header (max-width: 500px){
+  .header__desktop-container{
+    display: none;
+  }
+  
+}
+
+
+/* Que se oculte y luego aparezca en menu en este tamaño  */
+/* @container header (max-width: 784px ){
+  .header__container-secondary{
+    display: none;
+  } 
+} */
+
+@container header (max-width: 1244px){
+
+  .header__container-primary{
+    flex-grow: 3;
+    display: flex;
+    justify-content: space-around;
+  }
+
+}
+
+
+@container header (min-width: 1245px){
+  .desktop__open-nav{
+    display: none;
+  }
+  
+  /* Volver a la normalidad el secondary */
+  
+  .header__container-secondary{
+    position: static;
+    height: auto;
+    display: block;
+  }
+
+  /* Cambiar colum a row para volver a desktop */
+  .header__nav-desktop .header__colum{
+    flex-direction: row;
+  }
+}
+
+/* ------ HEADER DESKTOP SECTION END ------ */

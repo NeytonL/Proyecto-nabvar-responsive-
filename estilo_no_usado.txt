@@ -1,0 +1,27 @@
+/* ESTILOS QUE ME LLAMO LA ATENCION PERO NO LOS APLIQUE
+
+
+.header__button{
+  margin: 0 40px 0 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  align-self: center;
+  padding: 6px 10px;
+}
+
+.header__button a{
+  color: #000;
+  padding: 0;
+}
+
+
+
+*/
+
+
+
+ Esto era del container querie de max-width 1200px
+  .header__desktop-container{
+    justify-content: stretch;
+    align-items: center;
+  }
